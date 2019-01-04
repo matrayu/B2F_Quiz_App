@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: #ccc;
+}
+
+header {
+    padding: 50px;
+    text-align: center;
+    background: rgb(154, 154, 154);
+    color: blue;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #ccc;
+    list-style: none;
+}
+
+ul li {
+    color: aliceblue;
+    padding: 25px;
+    text-align: center;
+}
+
+
+main div.start {
+    height:400px;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 50px;
+    line-height: 30px;
+    margin: 40px auto 0 auto;
+}
+
+h2 {
+    padding-top: 20px;
+}
+
+button {
+    margin: auto;
+    padding: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
