@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
 }
 
 body {
@@ -32,7 +33,7 @@ ul li {
 
 
 main div.start {
-    height:400px;
+    height:450px;
     display: flex;
     flex-direction: column;
     background-color: aliceblue;
@@ -40,24 +41,38 @@ main div.start {
     text-align: center;
     padding: 20px 50px;
     line-height: 30px;
-    margin: 40px;
-}
-
-h2 {
-    padding-top: 20px;
-}
-
-button {
-    margin: auto;
-    padding: 20px;
+    margin: 60px;
 }
 
 fieldset {
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-
+    border: none;
 }
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: flex;
+    padding: 15px;
+    background-color: bisque;
+    margin-bottom: 10px;
+}
+
+input {
+    position: relative;
+    top: 7px;
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+.button-next {
+    padding: 20px;
+    font-size: 1em;
+    font
+}
+
+
 
 
 
