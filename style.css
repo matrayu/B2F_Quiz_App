@@ -33,15 +33,13 @@ ul li {
 
 
 main div.start {
-    height:450px;
     display: flex;
     flex-direction: column;
-    background-color: aliceblue;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin: 0px auto;
     text-align: center;
-    padding: 20px 50px;
-    line-height: 30px;
-    margin: 60px;
+    width: 100%;
+    padding: 20px;
 }
 
 fieldset {
@@ -60,16 +58,52 @@ label {
 }
 
 input {
-    position: relative;
-    top: 7px;
-    flex: 0 0 auto;
     margin-right: 10px;
+    margin-left: 30px;
 }
 
-.button-next {
+.button {
     padding: 20px;
     font-size: 1em;
-    font
+    width: 100%;
+    border: none;
+}
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0px auto;
+    text-align: center;
+    background-color: aliceblue;
+    padding-top: 40px;
+    height: 320px;
+    width: 100%;
+}
+
+.feedback p {
+    font-size: 1.6em;
+    background-color: antiquewhite;
+    margin: 0 15px;
+}
+
+.feedback-icon {
+    margin-bottom: 30px;
+}
+
+.firstP {
+    margin-bottom: 10px;
+}
+
+.ready {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0px auto;
+    text-align: center;
+    background-color: aliceblue;
+    padding-top: 40px;
+    height: 320px;
 }
 
 
