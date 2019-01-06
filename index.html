@@ -44,4 +44,50 @@
 
 </body>
 
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The 'Back to the Future' Quiz</title>
+  <meta name="description" content="Test your 'Back to the Future' knowledge">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="banner">
+    <h1>The <i>Back to the Future</i> Quiz</h1>
+    <div class="logo-img">TEMP LOGO
+      <a href="index.html">
+                <img class="logo" src="#" alt="delorian icon" />
+            </a>
+    </div>
+    <div class="score-question-tracker">
+      <ul class="score-question-list">
+        <li>Score: <span class="js-score">0</span></li>
+        <li>Question: <span class="js-question-count">0</span> of 10</li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <div class="start js-start">
+      <div class="feedback">
+        <p>Ready to test your <i>Back to the Future</i> knowledge?</p>
+      </div>
+      <form class="js-start-quiz">
+        <input class="button button-start js-button-start" type="submit" value="Let's Go!">
+      </form>
+    </div>
+    <div class="js-questions"></div>
+    <div class="js-feedback feedback"></div>
+    <div class="js-results feedback"></div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="index.js"></script>
+
+</body>
+
 </html>

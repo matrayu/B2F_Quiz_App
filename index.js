@@ -1,9 +1,8 @@
 'use strict';
 
 let currentQuestion = 0;
-let score = 0;
-let correctAnswers = 0;
-console.log(currentQuestion);
+let userScore = 0;
+//let correctAnswers = 0;
 
 const questionAnswerArr = [
   {
@@ -135,6 +134,8 @@ function handleStartQuiz() {
   $('.js-start').on('submit', function(event) {
     event.preventDefault();
     hideStartScreen();
+    $('.js-question-count').text(currentQuestion+1);
+    handleUpdateQuestionCounter();
     renderQuizQuestion();
     console.log('startQuiz has run');
   });
@@ -143,6 +144,11 @@ function handleStartQuiz() {
 function hideStartScreen() {
   $('.js-start').hide();
   console.log('hideStartScreen has run')
+}
+
+function showStartScreen() {
+  $('.js-start').show();
+  console.log('showStartScreen has run')
 }
 
 function hideQuestions() {
@@ -163,6 +169,11 @@ function hideFeedback() {
 function showFeedback() {
   $('.js-feedback').show();
   console.log('showFeedback has run');
+}
+
+function hideResults() {
+  $('.js-results').hide();
+  console.log('hideResults has run');
 }
 
 function incrementQuestionNumber() {
@@ -266,6 +277,8 @@ function checkForCorrectAnswer(userAns, actualAns) {
 
 function handleCorrectAnswer() {
   hideQuestions();
+  userScore++;
+  handleUpdateScore()
   renderCorrectFeedBack();
   showFeedback();
   console.log('handleCorrectAnswer has run');
@@ -328,12 +341,13 @@ function renderIncorrectFeedBack() {
 function handleNextQuestion() {
   $('.js-feedback').on('submit', function(element) {
     console.log('handleNextQuestion has ran')
+    event.preventDefault();
     if (currentQuestion < 9) {
-      event.preventDefault();
-      hideFeedback();
-      updateQuestionCounter();
-      renderQuizQuestion();
       showQuestions();
+      hideFeedback();
+      currentQuestion++;
+      handleUpdateQuestionCounter()
+      renderQuizQuestion();
     }
     else {
       handleFinalResults();
@@ -345,48 +359,88 @@ function handleNextQuestion() {
 
 function handleFinalResults() {
   console.log('handleFinalResults has run');
-  //hideFeedback();
+  hideFeedback();
   renderFinalResults();
 }
 
 function generateFinalResults() {
   console.log('generateFinalResults has run');
-  return `
+  if (userScore <= 4) {
+    return `
+    <div class="feedback-icon">
+      <img src="#" alt="temp icon">
+    </div>
+    <p class="firstP">Have you even seen the movies?!</p>
+    <p>You got ${userScore} out of 10 correct.</p>
+    <form>
+      <input class="button button-restart" type="submit" value="Restart Quiz">
+    </form>`
+  }
+  else if (userScore <= 7) {
+    return `
+    <div class="feedback-icon">
+      <img src="#" alt="temp icon">
+    </div>
+    <p class="firstP">Not too bad! Watch the movies again and you'll be pro.</p>
+    <p>You got ${userScore} out of 10 correct.</p>
+    <form>
+      <input class="button button-restart" type="submit" value="Restart Quiz">
+    </form>`
+  }
+  else {
+    return `
     <div class="feedback-icon">
       <img src="#" alt="temp icon">
     </div>
     <p class="firstP">Great Scott! You know your 'Back to the Future'!</p>
-    <p>You got 10 out of 10 correct!</p>
+    <p>You got ${userScore} out of 10 correct!</p>
     <form>
       <input class="button button-restart" type="submit" value="Restart Quiz">
     </form>`
 }
+};
 
 function renderFinalResults() {
   let finalResultsString = generateFinalResults();
-  $('.js-feedback').html(finalResultsString);
+  $('.js-results').html(finalResultsString);
   console.log('renderFinalResults has ran');
 }
 
 
 
 function handleRestartQuiz() {
+  $('.js-results').on('submit', function(element) {
+    event.preventDefault();
+    currentQuestion = 0;
+    userScore = 0
+    handleUpdateScore();
+    handleUpdateQuestionCounter();
+    hideResults();
+    renderQuizQuestion();
+    showQuestions();
     console.log('handleRestartQuiz has run');
+  });
 }
+
+
 
 function handleUpdateScore() {
-    console.log('handleUpdateScore has run');
+  $('.js-score').text(userScore);
+  console.log('handleUpdateScore has run');
 }
 
-function updateQuestionCounter() {
-  currentQuestion++;
+function handleUpdateQuestionCounter() {
+  $('.js-question-count').text(currentQuestion+1);
   console.log('handleUpdateQuestionCounter has run');
 }
+
+
 
 function handleQuiz() {
   handleStartQuiz();
   handleUserAnswerSubmitted();
-  handleNextQuestion()
+  handleNextQuestion();
+  handleRestartQuiz();
 }
 
 
