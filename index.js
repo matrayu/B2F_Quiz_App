@@ -97,7 +97,7 @@ const questionAnswerArr = [
     question: "What is Doc's catchphrase?",
     answers: [
       'Dyn-o-mite!',
-      "What you talking' 'bout, Marty?!",
+      "What you talkin' 'bout, Marty?!",
       'Wholly Moly!',
       'Great Scott!'
     ],
