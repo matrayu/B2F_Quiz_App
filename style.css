@@ -8,7 +8,7 @@
 
 body {
   background-color: #2766a4;
-  min-width: 250px;
+  min-width: 300px;
   max-width: 1000px;
   margin: auto;
 }
@@ -82,6 +82,7 @@ input {
     color: #f3c446;
     cursor: pointer;
     text-align: left;
+    font-size: 1.2em;
 }
 
 .answerOption:hover {
@@ -113,75 +114,53 @@ input[type=submit]:hover {
 
 .button {
     padding: 20px;
-    font-size: .9em;
+    font-size: 21px;
     width: 100%;
     border: none;
 }
 
-.start {
+.start, .start-questions, .feedback-answers, .feedback-results  {
     display: flex;
-    margin: auto;
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
+    width: 95%;
+    opacity: .8;
+    border-radius: 5px;
+}
+
+.start {
+    margin: auto;
     padding: 10px;
     height: 320px;
-    width: 95%;
-    font-size: 1.6em;
+    font-size: 1.2em;
     background: #f7f4f1;
-    opacity: .8;
-    border-radius: 4px;
     color: #2766a4;
 }
 
 .start-questions {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     margin:  -25px auto;
-    text-align: center;
     font-size: .8em;
-    width: 95%;
     padding: 20px;
     background-color: #221e23;
-    opacity: .8;
-    border-radius: 5px;
 }
 
 .feedback-answers {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     margin:  -25px auto;
-    text-align: center;
     font-size: 1.1em;
-    width: 95%;
     padding: 20px;
     background-color: #f7f4f1;
-    opacity: .8;
-    border-radius: 5px;
 }
 
 .feedback-results {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     margin:  -25px auto;
-    text-align: center;
-    width: 95%;
     padding: 20px;
     font-size: .9em;
     background-color: #f7f4f1;
-    opacity: .8;
-    border-radius: 5px;
 }
 
 .firstP {
     margin-bottom: 10px;
-}
-
-.ready-to-test {
-  font-size: .9em;
 }
 
 .ready {
@@ -223,7 +202,7 @@ input[type=submit]:hover {
         font-size: 2.3em;
     }
     .start {
-        font-size: 2.4em;
+        font-size: 1.8em;
     }
     .feedback-icon img{
         height: 150px;
@@ -238,6 +217,8 @@ input[type=submit]:hover {
     ul li {
         font-size: 1.5em;
     }
+    .button {
+        font-size: 30px;
 }
 
 @media screen and (max-width: 346px) {

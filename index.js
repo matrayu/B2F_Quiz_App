@@ -50,7 +50,7 @@ const questionAnswerArr = [
     incorrectFeedback: 'The DeLorean needs 1.21 gigawatts of power'
   },
   {
-    question: "What is the theme of the dance that George, Lorraine and Marty all attend?",
+    question: "What is the theme of the dance that George, Lorraine and Marty all attended?",
     answers: [
       'Happily Ever After',
       'Island Getaway',
@@ -58,7 +58,7 @@ const questionAnswerArr = [
       'Enchantment Under the Sea'
     ],
     correctAnswer: 'Enchantment Under the Sea',
-    incorrectFeedback: 'The theme of the dance was <i>Enchantment Under the Sea</i>.'
+    incorrectFeedback: 'The theme of the dance was <i>Enchantment Under the Sea</i>'
   },
   {
     question: "What speed does the DeLorean have to reach to travel through time?",
@@ -107,10 +107,10 @@ const questionAnswerArr = [
   {
     question: "What does Biff receive in 1955 from his 2015 self, to change the course of his life?",
     answers: [
-      'a sports almanac',
-      'a lottery ticket',
-      'a large inheritance',
-      'an iphone'
+        'a large inheritance',
+        'a lottery ticket',
+        'a sports almanac',
+        'an iphone'
     ],
     correctAnswer: 'a sports almanac',
     incorrectFeedback: 'Biff received a sports almanac from himself'
