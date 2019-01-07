@@ -7,53 +7,68 @@
 }
 
 body {
-    background-color: #ccc;
+  background-color: #2766a4;
+  min-width: 250px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 header {
-    padding: 50px;
+    padding: 30px;
     text-align: center;
-    background: rgb(154, 154, 154);
-    color: blue;
+    color: #f3c446;
+}
+
+h1 {
+    margin: -30px auto 0 auto;
+    padding-bottom: 8px;
+    font-size: 2.1em;
+    text-shadow: 2px 4px 3px black;
+}
+
+.quiz-small {
+    font-size: .7em;
+}
+
+h2 {
+    color: #f3c446;
+    text-shadow: 2px 4px 7px black;
+    font-size: 1.6em;
+    margin-top: -7px;
+    margin-bottom: 5px;
 }
 
 ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #ccc;
     list-style: none;
 }
 
 ul li {
-    color: aliceblue;
-    padding: 25px;
+    padding: 10px;
     text-align: center;
+    font-size: 1em;
+    margin-top: -7px;
+    margin-bottom: -8px;
+    text-shadow: 2px 4px 7px black;
+  
 }
 
 
 main div.start {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: 0px auto;
-    text-align: center;
-    width: 100%;
     padding: 20px;
 }
 
 fieldset {
-    border: none;
+  border: none;
 }
 
-h2 {
-    margin-bottom: 20px;
-}
+
 
 label {
     display: flex;
     padding: 15px;
-    background-color: bisque;
     margin-bottom: 10px;
 }
 
@@ -61,37 +76,112 @@ input {
     margin-right: 10px;
 }
 
+.answerOption {
+    background-color: #2766a4;
+    border-radius: 4px;
+    color: #f3c446;
+    cursor: pointer;
+    text-align: left;
+}
+
+.answerOption:hover {
+    background-color: #7f9fbb;
+    color: #2766a4;
+  }
+
+input[type=radio] {
+    background-color: #d08760;
+    color: #2766a4;
+}
+
+
+input[type=submit] {
+  width: 100%;
+  background-color: #f3c446;
+  color: #2766a4;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #7f9fbb;
+  color: #2766a4;
+}
+
 .button {
     padding: 20px;
-    font-size: 1em;
+    font-size: .9em;
     width: 100%;
     border: none;
 }
 
-.feedback {
+.start {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 10px;
+    height: 320px;
+    width: 95%;
+    font-size: 1.6em;
+    background: #f7f4f1;
+    opacity: .8;
+    border-radius: 4px;
+    color: #2766a4;
+}
+
+.start-questions {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: 0px auto;
+    margin:  -25px auto;
     text-align: center;
-    background-color: aliceblue;
-    padding-top: 40px;
-    height: 320px;
-    width: 100%;
+    font-size: .8em;
+    width: 95%;
+    padding: 20px;
+    background-color: #221e23;
+    opacity: .8;
+    border-radius: 5px;
 }
 
-.feedback p {
-    font-size: 1.6em;
-    background-color: antiquewhite;
-    margin: 0 15px;
+.feedback-answers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin:  -25px auto;
+    text-align: center;
+    font-size: 1.1em;
+    width: 95%;
+    padding: 20px;
+    background-color: #f7f4f1;
+    opacity: .8;
+    border-radius: 5px;
 }
 
-.feedback-icon {
-    margin-bottom: 30px;
+.feedback-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin:  -25px auto;
+    text-align: center;
+    width: 95%;
+    padding: 20px;
+    font-size: .9em;
+    background-color: #f7f4f1;
+    opacity: .8;
+    border-radius: 5px;
 }
 
 .firstP {
     margin-bottom: 10px;
+}
+
+.ready-to-test {
+  font-size: .9em;
 }
 
 .ready {
@@ -100,22 +190,55 @@ input {
     justify-content: space-evenly;
     margin: 0px auto;
     text-align: center;
-    background-color: aliceblue;
     padding-top: 40px;
     height: 320px;
 }
 
 
 
+.logo {
+    position: absolute;
+    right: 129px;
+    top: 6px;
+    z-index: -1;
+    width: 68.4vw;
+    opacity: 0.2;
+}
 
+.wrong-answer img{
+    height: 100px;
+}
 
+.feedback-icon img{
+    height: 83px;
+    margin: 8px;
+}
 
+@media screen and (min-width: 495px) {
+    .start-questions {
+        font-size: 1.6em;
+    }
+    .feedback-answers {
+        font-size: 2.1em;
+    }
+    .feedback-results {
+        font-size: 2.3em;
+    }
+    .start {
+        font-size: 2.4em;
+    }
+    .feedback-icon img{
+        height: 150px;
+        margin: 20px;
+    }
+    h1 {
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    ul li {
+        font-size: 1.5em;
+    }
 
-
-
-
-
-
-
-
-
+}

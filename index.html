@@ -2,52 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The 'Back to the Future' Quiz</title>
-    <meta name="description" content="Test your 'Back to the Future' knowledge">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <header class="banner">
-        <h1>The <i>Back to the Future</i> Quiz</h1>
-        <div class="logo-img">TEMP LOGO
-            <a href="index.html">
-                <img class="logo" src="#" alt="delorian icon" />
-            </a>
-        </div>
-        <div class="score-question-tracker">
-            <ul class="score-question-list">
-                <li>Score: <span class="score">0</span></li>
-                <li>Question: <span class="question-number">0</span> of 10</li>
-            </ul>
-        </div>
-    </header>
-    <main>
-        <div class="start js-start">
-            <div class="feedback">
-                <p>Ready to test your <i>Back to the Future</i> knowledge?</p>
-            </div>
-            <form class="js-start-quiz">
-                <input class="button button-start js-button-start" type="submit" value="Let's Go!">
-            </form>
-        </div>
-        <div class="js-questions"></div>
-        <div class="js-feedback feedback"></div>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="index.js"></script>
-
-</body>
-
-</html><!DOCTYPE html>
-<html lang="en">
-
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -59,14 +13,14 @@
 
 <body>
   <header class="banner">
-    <h1>The <i>Back to the Future</i> Quiz</h1>
-    <div class="logo-img">TEMP LOGO
+    <h1><br><b><i>Back to the Future</i></b></br><span class="quiz-small" >- The Quiz -</span></h1>
+    <div class="logo-img">
       <a href="index.html">
-                <img class="logo" src="#" alt="delorian icon" />
+                <img class="logo" src="images/DelorianLogo.png" alt="delorian icon" />
             </a>
     </div>
     <div class="score-question-tracker">
-      <ul class="score-question-list">
+      <ul class="js-score-question-list" style="display: none;">
         <li>Score: <span class="js-score">0</span></li>
         <li>Question: <span class="js-question-count">0</span> of 10</li>
       </ul>
@@ -74,16 +28,16 @@
   </header>
   <main>
     <div class="start js-start">
-      <div class="feedback">
-        <p>Ready to test your <i>Back to the Future</i> knowledge?</p>
+      <div class="feedback ready-to-test">
+        <p>Ready to test your knowledge of<br><b><i>Back to the Future</i></b>?</p><br></p>
       </div>
       <form class="js-start-quiz">
         <input class="button button-start js-button-start" type="submit" value="Let's Go!">
       </form>
     </div>
-    <div class="js-questions"></div>
-    <div class="js-feedback feedback"></div>
-    <div class="js-results feedback"></div>
+    <div class="start-questions js-questions" style="display: none;"></div>
+    <div class="feedback-answers js-feedback feedback" style="display: none;"></div>
+    <div class="feedback-results js-results feedback" style="display: none;"></div>
   </main>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="index.js"></script>

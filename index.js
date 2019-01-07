@@ -14,7 +14,7 @@ const questionAnswerArr = [
       'John Carpenter'
     ],
     correctAnswer: 'Robert Zemeckis',
-    incorrectFeedback: 'The director of all three <i>Back to the Future</i> movies was Robert Zemeckis.'
+    incorrectFeedback: 'The director of all three <i>Back to the Future</i> movies was Robert Zemeckis'
   },
   {
     question: 'What Huey Lewis song is featured in the first film?',
@@ -25,7 +25,7 @@ const questionAnswerArr = [
       'The Power of Love'
     ],
     correctAnswer: 'The Power of Love',
-    incorrectFeedback: 'The <i>Power of Love</i> was featured in the first film.'
+    incorrectFeedback: 'The <i>Power of Love</i> was featured in the first film'
   },
   {
     question: "What was the name of Doc Brown's dog?",
@@ -47,7 +47,7 @@ const questionAnswerArr = [
       '1.91 gigawatts'
     ],
     correctAnswer: '1.21 gigawatts',
-    incorrectFeedback: 'The DeLorean needs 1.21 gigawatts of power.'
+    incorrectFeedback: 'The DeLorean needs 1.21 gigawatts of power'
   },
   {
     question: "What is the theme of the dance that George, Lorraine and Marty all attend?",
@@ -69,10 +69,10 @@ const questionAnswerArr = [
       '100 mph'
     ],
     correctAnswer: '88 mph',
-    incorrectFeedback: 'The DeLorean needs to get up to 88 mph.'
+    incorrectFeedback: 'The DeLorean needs to get up to 88 mph'
   },
   {
-    question: "Finish the phrase 'Where we're going, we don't need...' what?",
+    question: "Finish the phrase 'Where we're going, we don't need...'",
     answers: [
       'gas',
       'roads',
@@ -102,7 +102,7 @@ const questionAnswerArr = [
       'Great Scott!'
     ],
     correctAnswer: 'Great Scott!',
-    incorrectFeedback: "Doc's famous catchphrase is '<i>Great Scott!</i>'"
+    incorrectFeedback: "Doc's famous catchphrase is <i>Great Scott!</i>"
   },
   {
     question: "What does Biff receive in 1955 from his 2015 self, to change the course of his life?",
@@ -113,22 +113,9 @@ const questionAnswerArr = [
       'an iphone'
     ],
     correctAnswer: 'a sports almanac',
-    incorrectFeedback: 'Biff received a sports almanac from himself.'
+    incorrectFeedback: 'Biff received a sports almanac from himself'
   }
 ]
-
-const answerKey = {
-    question1: 'Robert Zemeckis',
-    question2: 'The Power of Love',
-    question3: 'Einstein',
-    question4: '1.21 gigawatts',
-    question5: 'Enchantment Under the Sea',
-    question6: '88 mph',
-    question7: 'Roads',
-    question8: 'Jaws 19',
-    question9: 'Great Scott!',
-    question10: 'A sports almanac',
-}
 
 function handleStartQuiz() {
   $('.js-start').on('submit', function(event) {
@@ -137,6 +124,8 @@ function handleStartQuiz() {
     $('.js-question-count').text(currentQuestion+1);
     handleUpdateQuestionCounter();
     renderQuizQuestion();
+    showQuestions();
+    showScoring();
     console.log('startQuiz has run');
   });
 }
@@ -176,6 +165,22 @@ function hideResults() {
   console.log('hideResults has run');
 }
 
+function showResults() {
+    $('.js-results').show();
+    console.log('showResults has run');
+}
+
+function showScoring() {
+    $('.js-score-question-list').show();
+    console.log('showScoring has run');
+}
+
+function hideScoring() {
+    $('.js-score-question-list').hide();
+    console.log('hideScoring has run');
+}
+
+
 function incrementQuestionNumber() {
   currentQuestion ++;
 }
@@ -185,7 +190,7 @@ function incrementQuestionNumber() {
 function generateQuizQuestion(question, answerOption, questionNumber) {
   console.log('renderQuiz has run');
   return `
-    <div class="feedback">
+    <div class="feedback-questions">
                 <h2 class="js-question-number" data-question-number="${questionNumber}">${question}</h2>
                 <form class="answers">
                     <fieldset>
@@ -287,10 +292,10 @@ function handleCorrectAnswer() {
 function generateCorrectFeedback() {
   console.log('generateCorrectFeedback has run');
   return `
-    <div class="icon">
-      <img src="#" alt="temp icon">
+    <p>Correct Answer!</p>
+    <div class="feedback-icon">
+      <img src="images/Correct-iconfinder_delorean-03_748994.png" alt="Correct Answer!">
     </div>
-    <p>Correct!</p>
     <form>
     <input class="button button-next" type="submit" value="Next">
     </form>`
@@ -320,10 +325,10 @@ function generateIncorrectFeedback() {
   console.log('generateIncorrectFeedback has run');
   let feedback = getIncorrectFeedback();
   return `
-    <div class="icon">
-      <img src="#" alt="temp icon">
+    <p>Wrong Answer!</p>
+    <div class="feedback-icon">
+    <img src="images/Wrong-iconfinder_clock-tower_748997.png" alt="Wrong Answer!">
     </div>
-    <p>Incorrect!</p>
     <p>${feedback}</p>
     <form>
     <input class="button button-next" type="submit" value="Next">
@@ -360,6 +365,8 @@ function handleNextQuestion() {
 function handleFinalResults() {
   console.log('handleFinalResults has run');
   hideFeedback();
+  showResults();
+  hideScoring();
   renderFinalResults();
 }
 
@@ -367,32 +374,32 @@ function generateFinalResults() {
   console.log('generateFinalResults has run');
   if (userScore <= 4) {
     return `
-    <div class="feedback-icon">
-      <img src="#" alt="temp icon">
-    </div>
     <p class="firstP">Have you even seen the movies?!</p>
-    <p>You got ${userScore} out of 10 correct.</p>
+    <div class="feedback-icon">
+      <img src="images/LOW-iconfinder_skate_748989.png" alt="Hoverboard">
+    </div>
+    <p>You got ${userScore} out of 10 correct</p>
     <form>
       <input class="button button-restart" type="submit" value="Restart Quiz">
     </form>`
   }
   else if (userScore <= 7) {
     return `
-    <div class="feedback-icon">
-      <img src="#" alt="temp icon">
-    </div>
     <p class="firstP">Not too bad! Watch the movies again and you'll be pro.</p>
-    <p>You got ${userScore} out of 10 correct.</p>
+    <div class="feedback-icon">
+      <img src="images/MED-iconfinder_delorean-01_748996.png" alt="Delorean Wings">
+    </div>
+    <p>You got ${userScore} out of 10 correct</p>
     <form>
       <input class="button button-restart" type="submit" value="Restart Quiz">
     </form>`
   }
   else {
     return `
+    <p class="firstP"><i>Great Scott!</i><br>You know your <i>Back to the Future</i>!</p>
     <div class="feedback-icon">
-      <img src="#" alt="temp icon">
+      <img src="images/HI-iconfinder_delorean-04_748993.png" alt="Delorean Flames">
     </div>
-    <p class="firstP">Great Scott! You know your 'Back to the Future'!</p>
     <p>You got ${userScore} out of 10 correct!</p>
     <form>
       <input class="button button-restart" type="submit" value="Restart Quiz">
