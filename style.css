@@ -40,7 +40,7 @@ h2 {
 
 ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     list-style: none;
 }
@@ -194,12 +194,10 @@ input[type=submit]:hover {
     height: 320px;
 }
 
-
-
 .logo {
     position: absolute;
-    right: 129px;
-    top: 6px;
+    right: 10%;
+    top: 2%;
     z-index: -1;
     width: 68.4vw;
     opacity: 0.2;
@@ -240,5 +238,10 @@ input[type=submit]:hover {
     ul li {
         font-size: 1.5em;
     }
+}
 
+@media screen and (max-width: 346px) {
+    ul {
+        justify-content: center;
+    }
 }

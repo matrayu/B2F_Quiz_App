@@ -425,6 +425,7 @@ function handleRestartQuiz() {
     hideResults();
     renderQuizQuestion();
     showQuestions();
+    showScoring();
     console.log('handleRestartQuiz has run');
   });
 }
